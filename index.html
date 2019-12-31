@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Live Score</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      
+          <div class="row">
+            <div class="col-xl-6 ">
+              <div class="card bg-warning">
+                <div class="card-header">Team1</div>
+                <div class="card-body">
+                  <ol>
+                    <li id="t1p1">Player1 :</li>
+                    <li id="t1p2">Player2 :</li>
+                    <li id="t1p3">Player3 :</li>
+                    <li id="t1p4">Player4 :</li>
+                    <li id="t1p5">Player5 :</li>
+                    <li id="t1p6">Player6 :</li>
+                    <li id="t1p7">Player7 :</li>
+                    <li id="t1p8">Player8 :</li>
+                    <li id="t1p9">Player9 :</li>
+                    <li id="t1p10">Player10 :</li>
+                  </ol>
+                  <textarea
+                    name=""
+                    id="display1"
+                    cols="10"
+                    rows="10"
+                    style="height: 100px;"
+                  ></textarea>
+                  <button onclick="team1()" class="btn btn-primary" id="t1">
+                    Bat
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 ">
+              <div class="card bg-info">
+                <div class="card-header">Team2</div>
+                <div class="card-body">
+                  <ol>
+                    <li id="t2p1">Player1 :</li>
+                    <li id="t2p2">Player2 :</li>
+                    <li id="t2p3">Player3 :</li>
+                    <li id="t2p4">Player4 :</li>
+                    <li id="t2p5">Player5 :</li>
+                    <li id="t2p6">Player6 :</li>
+                    <li id="t2p7">Player7 :</li>
+                    <li id="t2p8">Player8 :</li>
+                    <li id="t2p9">Player9 :</li>
+                    <li id="t2p10">Player10 :</li>
+                  </ol>
+                  <textarea
+                    name=""
+                    id="display2"
+                    cols="10"
+                    rows="10"
+                    style="height: 100px;"
+                  ></textarea>
+                  <button onclick="team2()" class="btn btn-primary" id="t2">
+                    Bat
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12">
+              <button id="res" class="btn btn-primary" onclick="results()">
+                Result
+              </button>
+            </div>
+          </div>
+        </div>
+      
+    <script>
+      var scr1 = [];
+      var tot1;
+      var ballcount = 0;
+      var plycount = 10;
+      var team1 = () => {
+        document.getElementById("t2").disabled = true;
+        if (ballcount == 60 || plycount == 0) {
+          console.log(tot1);
+          document.getElementById("t2").disabled = false;
+          document.getElementById("t1").disabled = true;
+          return scr1;
+        } else {
+          ballcount++;
+          var btn1 = Math.floor(Math.random() * 7 + 0);
+          scr1.push(btn1);
+          tot1 = scr1.reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0);
+          document.getElementById("display1").value = tot1;
+          if (btn1 == 0) {
+            plycount--;
+          }
+        }
+        localStorage.setItem("team1Score", tot1);
+      };
+      console.log(scr1);
+
+      var scr2 = [];
+      var tot2;
+      var ballcount2 = 0;
+      var plycount2 = 10;
+      var team2 = () => {
+        document.getElementById("t1").disabled = true;
+        if (ballcount2 == 60 || plycount2 == 0) {
+          console.log(tot2);
+          document.getElementById("t2").disabled = true;
+          document.getElementById("t1").disabled = false;
+          return scr2;
+        } else {
+          ballcount2++;
+          var btn2 = Math.floor(Math.random() * 7 + 0);
+          scr2.push(btn2);
+          tot2 = scr2.reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0);
+          document.getElementById("display2").innerText = tot2;
+        }
+        if (btn2 == 0) {
+          plycount2--;
+        }
+        localStorage.setItem("team2Score", tot2);
+      };
+
+      console.log(`${tot1} ${tot2}`);
+      console.log(scr2);
+
+      function results() {
+        window.location.href = "./result.html";
+      }
+    </script>
+  </body>
+</html>
