@@ -1,9 +1,9 @@
       var scr1 = [];
       var tot1;
       var ballcount = 0;
-      var plycount = 5;
+      var plycount = 10;
       var team1 = () => {
-        if (ballcount == 18 || plycount == 0) {
+        if (ballcount == 60 || plycount == 0) {
           console.log(tot1);
           document.getElementById("display1").innerText(tot1);
           return scr1;
@@ -24,9 +24,9 @@
       var scr2 = [];
       var tot2;
       var ballcount2 = 0;
-      var plycount2 = 5;
+      var plycount2 = 10;
       var team2 = () => {
-        if (ballcount2 == 18 || plycount2 == 0) {
+        if (ballcount2 == 60 || plycount2 == 0) {
           console.log(tot2);
           return scr2;
         } else {
@@ -42,18 +42,5 @@
         }, 0);
       };
       console.log(scr2);
-      var a=localStorage.getItem("team1Score");
-      var b=localStorage.getItem("team2Score");
-      var report= ()=>{
-        if(a>b){
-            alert("Team1 won the match");
-        }
-        else if(b>a){
-          alert("Team2 won the match");
-        }
-        else if(a==b){
-            alert("Match drawn");
-        }
-    }
-
+      
 

@@ -12,133 +12,373 @@
 
   <body>
     <div class="container-fluid">
-      
-          <div class="row">
-            <div class="col-xl-6 ">
-              <div class="card bg-warning">
-                <div class="card-header">Team1</div>
-                <div class="card-body">
-                  <ol>
-                    <li id="t1p1">Player1 :</li>
-                    <li id="t1p2">Player2 :</li>
-                    <li id="t1p3">Player3 :</li>
-                    <li id="t1p4">Player4 :</li>
-                    <li id="t1p5">Player5 :</li>
-                    <li id="t1p6">Player6 :</li>
-                    <li id="t1p7">Player7 :</li>
-                    <li id="t1p8">Player8 :</li>
-                    <li id="t1p9">Player9 :</li>
-                    <li id="t1p10">Player10 :</li>
-                  </ol>
-                  <textarea
+      <div class="row bg-secondary">
+        <div class="col-xl-6 ">
+          <div class="card text-light">
+            <div class="card-header bg-success ">Team1</div>
+            <div class="card-body bg-dark ">
+              <ul class="py-1" style="list-style: none;">
+                <li id="t1p1">
+                  Player1:<input
+                    type="text"
                     name=""
-                    id="display1"
-                    cols="10"
-                    rows="10"
-                    style="height: 100px;"
-                  ></textarea>
-                  <button onclick="team1()" class="btn btn-primary" id="t1">
-                    Bat
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 ">
-              <div class="card bg-info">
-                <div class="card-header">Team2</div>
-                <div class="card-body">
-                  <ol>
-                    <li id="t2p1">Player1 :</li>
-                    <li id="t2p2">Player2 :</li>
-                    <li id="t2p3">Player3 :</li>
-                    <li id="t2p4">Player4 :</li>
-                    <li id="t2p5">Player5 :</li>
-                    <li id="t2p6">Player6 :</li>
-                    <li id="t2p7">Player7 :</li>
-                    <li id="t2p8">Player8 :</li>
-                    <li id="t2p9">Player9 :</li>
-                    <li id="t2p10">Player10 :</li>
-                  </ol>
-                  <textarea
+                    id="Team1Player1ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p2">
+                  Player2:<input
+                    type="text"
                     name=""
-                    id="display2"
-                    cols="10"
-                    rows="10"
-                    style="height: 100px;"
-                  ></textarea>
-                  <button onclick="team2()" class="btn btn-primary" id="t2">
-                    Bat
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-12">
-              <button id="res" class="btn btn-primary" onclick="results()">
-                Result
+                    id="Team1Player2ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p3">
+                  Player3:<input
+                    type="text"
+                    name=""
+                    id="Team1Player3ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p4">
+                  Player4:<input
+                    type="text"
+                    name=""
+                    id="Team1Player4ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p5">
+                  Player5:<input
+                    type="text"
+                    name=""
+                    id="Team1Player5ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p6">
+                  Player6:<input
+                    type="text"
+                    name=""
+                    id="Team1Player6ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p7">
+                  Player7:<input
+                    type="text"
+                    name=""
+                    id="Team1Player7ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p8">
+                  Player8:<input
+                    type="text"
+                    name=""
+                    id="Team1Player8ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p9">
+                  Player9:<input
+                    type="text"
+                    name=""
+                    id="Team1Player9ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t1p10">
+                  Player10:<input
+                    type="text"
+                    name=""
+                    id="Team1Player10ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+              </ul>
+              <textarea class="form-control w-25" id="display1" style="float: left;" disabled></textarea>
+              <textarea class="form-control w-25" id="timer1" style="float: right;"disabled></textarea>
+              <br>
+              <button onclick="team1()" class="btn btn-primary" id="t1" disabled>
+                Bat
               </button>
+              <button onclick="team1enable()" id="play1" class="btn btn-primary">Play</button>
             </div>
           </div>
         </div>
-      
+        <div class="col-xl-6 ">
+          <div class="card border-dark text-light">
+            <div class="card-header bg-success ">Team2</div>
+            <div class="card-body bg-dark ">
+              <ul class="py-1" style="list-style: none;">
+                <li id="t2p1">
+                  Player1:<input
+                    type="text"
+                    name=""
+                    id="Team2Player1ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p2">
+                  Player2:<input
+                    type="text"
+                    name=""
+                    id="Team2Player2ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p3">
+                  Player3:<input
+                    type="text"
+                    name=""
+                    id="Team2Player3ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p4">
+                  Player4:<input
+                    type="text"
+                    name=""
+                    id="Team2Player4ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p5">
+                  Player5:<input
+                    type="text"
+                    name=""
+                    id="Team2Player5ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p6">
+                  Player6:<input
+                    type="text"
+                    name=""
+                    id="Team2Player6ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p7">
+                  Player7:<input
+                    type="text"
+                    name=""
+                    id="Team2Player7ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p8">
+                  Player8:<input
+                    type="text"
+                    name=""
+                    id="Team2Player8ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p9">
+                  Player9:<input
+                    type="text"
+                    name=""
+                    id="Team2Player9ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+                <li id="t2p10">
+                  Player10:<input
+                    type="text"
+                    name=""
+                    id="Team2Player10ip"
+                    class="form-control w-50"
+                    disabled
+                  />
+                </li>
+              </ul>
+              <textarea class="form-control w-25" id="display2" style="float: left;" disabled></textarea>
+              <textarea class="form-control w-25" id="timer2" style="float: right;" disabled></textarea>
+              <br>
+              <button onclick="team2()" class="btn btn-primary" id="t2" disabled>
+                Bat
+              </button>
+              <button onclick="team2enable()" id="play2" class="btn btn-primary">Play</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row  bg-secondary">
+        <div class="col-xl-12">
+          <button id="res" class="btn btn-primary" onclick="results()">
+            Result
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script>
+      
       var scr1 = [];
       var tot1;
+      var counter = 1;
       var ballcount = 0;
-      var plycount = 10;
+      var ballsfaced = 6;
+      var t1playersScore = [];
+      var t2playersScore = [];
       var team1 = () => {
         document.getElementById("t2").disabled = true;
-        if (ballcount == 60 || plycount == 0) {
-          console.log(tot1);
-          document.getElementById("t2").disabled = false;
+        if (ballcount == 60 || counter == 11) {
+          document.getElementById("play2").disabled = false;
+          document.getElementById("play1").disabled = true;
           document.getElementById("t1").disabled = true;
           return scr1;
         } else {
-          ballcount++;
+          ballsfaced--;
           var btn1 = Math.floor(Math.random() * 7 + 0);
+          console.log(btn1);
           scr1.push(btn1);
+          document.getElementById("Team1Player" + counter + "ip").value +=
+            btn1 + ",";
+          if (ballsfaced == 0 || btn1 == 0) {
+            t1playersScore.push(
+              document
+                .getElementById("Team1Player" + counter + "ip")
+                .value.split(",")
+                .map(ele => parseInt(ele))
+                .filter(Boolean)
+            );
+            counter++;
+            ballsfaced = 6;
+          }
           tot1 = scr1.reduce((total, currentvalue) => {
             return total + currentvalue;
           }, 0);
           document.getElementById("display1").value = tot1;
-          if (btn1 == 0) {
-            plycount--;
-          }
         }
-        localStorage.setItem("team1Score", tot1);
+        let team1obj = {
+          team1Score: tot1,
+          team1playersScore: t1playersScore
+        };
+        localStorage.setItem("firstteam", JSON.stringify(team1obj));
       };
-      console.log(scr1);
 
       var scr2 = [];
       var tot2;
+      var counter2 = 1;
       var ballcount2 = 0;
-      var plycount2 = 10;
+      var ballsfaced2 = 6;
       var team2 = () => {
         document.getElementById("t1").disabled = true;
-        if (ballcount2 == 60 || plycount2 == 0) {
-          console.log(tot2);
+        // Team Innings exit condition
+        if (ballcount2 == 60 || counter2 == 11) {
+          document.getElementById("play2").disabled = true;
+          document.getElementById("play1").disabled = false;
           document.getElementById("t2").disabled = true;
-          document.getElementById("t1").disabled = false;
           return scr2;
         } else {
-          ballcount2++;
+          ballsfaced2--;
           var btn2 = Math.floor(Math.random() * 7 + 0);
+          console.log(btn2);
           scr2.push(btn2);
+          document.getElementById("Team2Player" + counter2 + "ip").value +=
+            btn2 + ",";
+          // Out Condition & adding player's array score to main team array
+          if (ballsfaced2 == 0 || btn2 == 0) {
+            t2playersScore.push(
+              document
+                .getElementById("Team2Player" + counter2 + "ip")
+                .value.split(",")
+                .map(ele => parseInt(ele))
+                .filter(Boolean)
+            );
+            counter2++;
+            ballsfaced2 = 6;
+          }
           tot2 = scr2.reduce((total, currentvalue) => {
             return total + currentvalue;
           }, 0);
-          document.getElementById("display2").innerText = tot2;
+          document.getElementById("display2").value = tot2;
         }
-        if (btn2 == 0) {
-          plycount2--;
-        }
-        localStorage.setItem("team2Score", tot2);
+        let team2obj = {
+          team2Score: tot2,
+          team2playersScore: t2playersScore
+        };
+        localStorage.setItem("secondteam", JSON.stringify(team2obj));
       };
 
-      console.log(`${tot1} ${tot2}`);
-      console.log(scr2);
-
+      // var inningstime;
+      // function perinning(){}
+      //   inningstime= setInterval(countdown,1000);
+      //   var timecount=59;
+      //   function countdown(){
+      //     if (timecount<0){
+      //       return;
+      //     }
+      //     document.getElementById("timer1").innerText =timecount;
+      //     timecount--;
+      //     console.log(timecount);
+      //   }
+        var team1enable=()=>{
+          document.getElementById("t1").disabled=false;
+          document.getElementById("t2").disabled=true;
+          document.getElementById("play2").disabled=true;
+          var innings1time= setInterval(countdown,1000);
+          var timecount=14;
+          function countdown(){
+          if (timecount<0 || ballcount == 60){
+            stop();
+            document.getElementById("t1").disabled=true;
+            document.getElementById("play2").disabled=false; 
+            return;
+          }
+          document.getElementById("timer1").innerText =timecount;
+          timecount--;
+        }
+        function stop() { 
+            clearInterval(innings1time); 
+        } 
+        }
+        var team2enable=()=>{
+          document.getElementById("t2").disabled=false;
+          document.getElementById("t1").disabled=true;
+          document.getElementById("play1").disabled=true;
+          var innings2time= setInterval(countdown,1000);
+          var timecount=14;
+          function countdown(){
+          if (timecount<0 || ballcount2 == 60){
+            stop();
+            document.getElementById("play1").disabled=false; 
+            document.getElementById("t2").disabled=true;
+            return;
+          }
+          document.getElementById("timer2").innerText =timecount;
+          timecount--;
+        }
+        function stop() { 
+            clearInterval(innings2time); 
+        }
+        }
+      
+      
       function results() {
         window.location.href = "./result.html";
       }

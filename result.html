@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Document</title>
+    <title>RESULTS</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -17,6 +17,35 @@
             <h5 class="card-title">RESULT</h5>
             <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
             <p class="card-text">Here is the result</p>
+            <!-- <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table> -->
             <button onclick="report()" class="btn btn-primary">
               view result
             </button>
@@ -24,16 +53,94 @@
         </div>
       </div>
     </div>
-    <script src="./cric.js">
-      // var report = () => {
-      //   if (tot1 > tot2) {
-      //     alert("Team1 won the match");
-      //   } else if (tot2 > tot1) {
-      //     alert("Team2 won the match");
-      //   } else if (tot1 == tot2) {
-      //     alert("Match drawn");
-      //   }
-      // };
+    <script>
+      var teama = JSON.parse(window.localStorage.getItem("firstteam"));
+      var teamb = JSON.parse(window.localStorage.getItem("secondteam"));
+      var report = ()=> {
+      var player=[];
+      var player1;
+      var mom=[]
+      var teamone=parseInt(teama.team1Score);
+      var teamtwo=parseInt(teamb.team2Score);
+        if (teamone>teamtwo){
+          player=(teama.team1playersScore);
+          mom.push(player[0].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[1].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[2].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[3].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[4].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[5].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[6].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[7].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[8].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[9].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          console.log(mom);
+          var mx1 = Math.max(...mom)
+          var ind = (mom).indexOf(mx1)
+          alert( `team1 won the match and the man of the match is :  Player${ind +1}`  );
+
+        }else if(teamtwo>teamone){
+          player=(teamb.team2playersScore);
+          mom.push(player[0].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[1].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[2].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[3].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[4].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[5].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[6].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[7].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[8].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          mom.push(player[9].flat().reduce((total, currentvalue) => {
+            return total + currentvalue;
+          }, 0));
+          console.log(mom);
+          var mx2 = Math.max(...mom)
+          var ind = (mom).indexOf(mx2)
+          alert( `team1 won the match and the man of the match is :  Player ${ind +1}`  );
+        }else if(teamone==teamtwo){
+          alert("match drawn")
+        }  
+       
+        // console.log(teama, teamb);
+      };
     </script>
   </body>
 </html>
