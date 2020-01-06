@@ -324,19 +324,6 @@
         };
         localStorage.setItem("secondteam", JSON.stringify(team2obj));
       };
-
-      // var inningstime;
-      // function perinning(){}
-      //   inningstime= setInterval(countdown,1000);
-      //   var timecount=59;
-      //   function countdown(){
-      //     if (timecount<0){
-      //       return;
-      //     }
-      //     document.getElementById("timer1").innerText =timecount;
-      //     timecount--;
-      //     console.log(timecount);
-      //   }
         var team1enable=()=>{
           document.getElementById("t1").disabled=false;
           document.getElementById("t2").disabled=true;
@@ -377,7 +364,7 @@
             clearInterval(innings2time); 
         }
         }
-      
+ 
       
       function results() {
         window.location.href = "./result.html";
